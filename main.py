@@ -1,6 +1,6 @@
 def s():
   global starter
-  starter = input("Hello, My name is Chatterbox /n a) Hello! q) Quit ")
+  starter = input("Hello, My name is Chatterbot!  a) Hello! q) Quit ")
 
 def continue1st():
   global continue1
@@ -15,9 +15,25 @@ def continue2nd():
   c = " is a pretty name. What do you do for fun? "
   continue2 = input(continue1 + c)
 
+def continue3rd():
+  global continue3
+  continue3 = input(continue2 + " is a cool hobby. Where are you from? ")
+
+def continue4th():
+  global continue4
+  continue4 = input(continue3 + "? Do you like it there?     a) Yes  b) No  q) Quit ")
+  
+def continue5th():
+  if continue4 == 'a':
+    global continue5
+    continue5 = input("Love that for you. How are you today? ")
+  elif continue4 == 'b':
+    continue5 = input("I'm sorry to hear that. How are you today? ")
+  else:
+    continue5 = input("I don't know what that's supposed to mean, but how are you today? ")
+
 def ending():
-  d = " is a cool hobby, thanks for talking with me!"
-  print(continue2 + d)
+  print("Cool, thanks for talking with me!")
 
 
 s()
@@ -26,4 +42,10 @@ if starter != 'q':
   if continue1 != 'q':
     continue2nd()
     if continue2 != 'q':
-      ending()
+      continue3rd()
+      if continue3 != 'q':
+        continue4th()
+        if continue4 != 'q':
+          continue5th()
+          if continue5 != 'q':
+            ending()
